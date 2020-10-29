@@ -1,4 +1,5 @@
 # Mind-Your-Money
+
 Money Manager
 
 This app is a useful tool that individuals can use to manage their money while allocating it into separate accounts for specific goals. Users can update their account balances through the spreadsheet listed on the app. These changes will be reflected in the progress bar for each goal. Goals and progress can be edited by the user.
@@ -9,13 +10,12 @@ This app is a useful tool that individuals can use to manage their money while a
 
 [MVP/Post MVP](https://github.com/ctaar16/Mind-Your-Money/projects/1)
 
-
 ```
 const Account = new Schema(
   {
     accountType: { type: String, required: true },
     accountNumber: { type: String, required: true },
-    routingNumber: { type: String, required: true }
+    routingNumber: { type: String, required: true },
     creditCardExp: { type: String, required: true },
     creditCardccv: { type: String, required: true },
     firstName: { type: String, required: true },
@@ -26,4 +26,4 @@ const Account = new Schema(
     state: { type: String, required: true },
     zip: { type: String, required: true }
   }
-  ```
+```
