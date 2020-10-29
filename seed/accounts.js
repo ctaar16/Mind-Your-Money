@@ -1,21 +1,21 @@
 const db = require('../db/connection')
-const Product = require('../models/account')
+const Account = require('../models/account')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-  const products = 
+  const accounts = 
   [
       {
         "accountType": "Checking",
         "accountNumber": "001",
         "routingNumber": "12345",
-        "creditCardExp": "",
-        "creditCardccv": "",
+        "creditCardExp": " ",
+        "creditCardccv": " ",
         "firstName": "Darth",
         "lastName": "Helmet",
         "address": "Mega Maid",
-        "address2": "",
+        "address2": " ",
         "city": "Long Ship",
         "state": "Spaceballs",
         "zip": "22222"
@@ -23,8 +23,8 @@ const main = async () => {
   ]
 
 
-await Product.insertMany(products)
-    console.log("Created products!")
+await Account.insertMany(accounts)
+    console.log("Created Accounts!")
 }
 const run = async () => {
     await main()
