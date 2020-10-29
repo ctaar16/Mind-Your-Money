@@ -10,7 +10,7 @@ This app is a useful tool that individuals can use to manage their money while a
 [MVP/Post MVP](https://github.com/ctaar16/Mind-Your-Money/projects/1)
 
 
-const Account = new Schema(
+```const Account = new Schema(
   {
     accountType: { type: String, required: true },
     accountNumber: { type: String, required: true },
@@ -25,4 +25,4 @@ const Account = new Schema(
     state: { type: String, required: true },
     zip: { type: String, required: true }
 
-  }
+  }```
