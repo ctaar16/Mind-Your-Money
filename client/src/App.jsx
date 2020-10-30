@@ -6,9 +6,17 @@ import { Route, Switch } from 'react-router-dom'
 const App = () => {
   return (
     <div className="app">
+      {/* <header> */}
       <Switch>
         <Route exact path="/" component={Homepage} />
-       </Switch>
+      </Switch>
+      {/* </header>
+      <form className="login-info">
+      <input className="user-form" placeholder="Username"></input>
+      <input className="pass-form" placeholder="Password"></input>
+      </form>
+      <button className="login-button">Log In</button>
+      <button className="signup-button">Sign Up</button> */}
     </div>
   )
 }
