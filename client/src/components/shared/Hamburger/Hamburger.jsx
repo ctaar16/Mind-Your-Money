@@ -49,8 +49,11 @@ export default class Hamburger extends React.Component {
         customOnKeyDown={this.closeAllMenusOnEsc}
       >
         <main id="page-wrap">
-        <NavLink className="link" to="/accounts">Accounts</NavLink>
+        <NavLink className="link" to="/MyAccount">Accounts</NavLink>
        
+        <NavLink className="link" to="/AddAccount">Create</NavLink>
+          
+        <NavLink className="link" to="/EditAccount">Edit</NavLink>
           <a onClick={() => this.closeMenu()} className="menu-item" href="#about">
             About
           </a>
