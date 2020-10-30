@@ -50,7 +50,7 @@ export default class Hamburger extends React.Component {
       >
         <main id="page-wrap">
         <NavLink className="link" to="/accounts">Accounts</NavLink>
-        <NavLink className="link" to="/add-account">Add Account</NavLink>
+       
           <a onClick={() => this.closeMenu()} className="menu-item" href="#about">
             About
           </a>
