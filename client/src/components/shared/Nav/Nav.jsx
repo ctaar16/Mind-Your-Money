@@ -1,18 +1,41 @@
 import React from 'react'
 import './Nav.css'
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
-
     return (
-      <nav>
-        <div className="nav">
-          <NavLink className="logo" to="/">Mind Yo' Money!</NavLink>
+      <div className="nav-container">
+        <div className="nav-icons">
           <Link>
-          <img src={process.env.PUBLIC_URL + '/Goals.png'} />
+          <img src={process.env.PUBLIC_URL + 'assets/icons/Nav-Icons/Goals.png'} />
           </Link>
-         </div>
-       </nav>
+          <p>Goals</p>
+        </div>
+        <div className="nav-icons">
+          <Link>
+          <img src={process.env.PUBLIC_URL + 'assets/icons/Nav-Icons/Organize.png'} />
+          </Link>
+          <p>Organize</p>
+        </div>
+        <div className="nav-icons">
+          <Link>
+          <img src={process.env.PUBLIC_URL + 'assets/icons/Nav-Icons/Calendar.png'} />
+          </Link>
+          <p>Calendar</p>
+        </div>
+        <div className="nav-icons">
+          <Link>
+          <img src={process.env.PUBLIC_URL + 'assets/icons/Nav-Icons/Vision.png'} />
+          </Link>
+          <p>Vision</p>
+        </div>
+        <div className="nav-icons">
+          <Link>
+          <img src={process.env.PUBLIC_URL + 'assets/icons/Nav-Icons/Explore.png'} />
+          </Link>
+          <p>Explore</p>
+        </div>
+      </div>
     )
 
 }
