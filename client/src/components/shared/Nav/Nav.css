@@ -1,3 +1,23 @@
-Nav.Link {
-  color: black;
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top:85px;
+}
+
+.nav-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+p {
+  position:absolute;
+  top:145px;
+  color: white;
 }
