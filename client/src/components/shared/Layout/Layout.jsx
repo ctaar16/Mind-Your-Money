@@ -3,10 +3,12 @@ import './Layout.css'
 import Nav from '../Nav/Nav'
 import Hamburger from '../Hamburger/Hamburger'
 
+
+
 const Layout = (props) => (
-    <div className='layout'>
-        {/* <Hamburger />
-        <Nav /> */}
+  <div id="outer-container" className='layout'>
+        <Hamburger pageWrapId={"page-wrap"} outerContainerId={"App"}/>
+        <Nav />
         <div className="layout-children">
             {props.children}
         </div>
