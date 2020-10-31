@@ -10,7 +10,7 @@ const Layout = (props) => (
   <div id="outer-container" className='layout'>
     <Hamburger className="Hamburger" pageWrapId={"page-wrap"} outerContainerId={"App"} />
     <Link className="logo" to="/">
-    <img src={process.env.PUBLIC_URL + 'assets/Logo.png'} />
+    <img src={process.env.PUBLIC_URL + 'assets/Logo.png'} alt="Mind Yo' Money!"/>
     </Link>
         <Nav />
         <div className="layout-children">
