@@ -1,12 +1,12 @@
 import React from 'react';
+import './Rewards.css'
 
 function Rewards(props) {
     return (
-        <div>
-            <div>My Rewards</div>
+        <div className="rewards-layout">
+            <div className="rewards-title">My Rewards</div>
             <form className="rewards-dropdown">
-                <label htmlFor="rewards">Rewards:</label>
-                <select className="rewards">
+                <select className="rewards-options">
                     <option value="1-5" >&nbsp; 1-5% Cash Back &nbsp;</option>
                     <option value="5-10">&nbsp; 5-10% Cash Back &nbsp;</option>
                 </select>
