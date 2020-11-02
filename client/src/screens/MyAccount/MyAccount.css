@@ -18,11 +18,17 @@
     margin: 20px auto;
     font-size: 15px;
     text-align: center;
+    
+}
+.add-account-link {
+    text-decoration: none;
+    color: black;
 }
 
 .add-account-text {
     display: flex;
     padding-left: 10px;
+    
 }
 
 .button-add-icon {
