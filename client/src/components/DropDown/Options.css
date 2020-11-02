@@ -1,0 +1,27 @@
+.options {
+  background-color: #30445c;
+  /* height: 100vh; */
+}
+
+.nav-menu {
+  display: grid;
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  justify-content: center;
+  background-color: #30445c;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  border: solid 1px #d0b68f;
+  background-color: #d0b68f;
+  padding: 3px;
+  border-radius: 3px;
+}
