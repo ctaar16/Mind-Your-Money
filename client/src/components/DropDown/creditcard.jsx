@@ -35,7 +35,7 @@ function AddAccount(props) {
 }
 
   return (
-    <div className="bottom">
+    <div className="mimi">
     <form className="pepperoni" onSubmit={handleSubmit}>
       
       <input
@@ -45,22 +45,23 @@ function AddAccount(props) {
           onChange={(e) => setAccountNumber(e.target.value)}
           placeholder="Credit Card Number"
       />
-
+        <div>  
       <input
         className="exp"
         type="text"
         value={creditCardExp}
-          onChange={(e) => setCreditCardExp(e.target.value)}
-          placeholder="Exp."
-      />
+        onChange={(e) => setCreditCardExp(e.target.value)}
+        placeholder="Exp."
+        />
 
       <input
         className="ccv"
         type="text"
         value={creditCardccv}
-          onChange={(e) => setCreditCardccv(e.target.value)}
-          placeholder="CCV"
-      />
+        onChange={(e) => setCreditCardccv(e.target.value)}
+        placeholder="CCV"
+        />
+        </div>
 
       <input
         className="first"

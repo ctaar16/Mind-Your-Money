@@ -34,7 +34,7 @@ function AddAccount(props) {
 }
 
   return (
-    <div className="bottom">
+    <div className="mimi">
     <form className="pepperoni" onSubmit={handleSubmit}>
       
         <input
