@@ -1,5 +1,5 @@
 .homepage-container {
-  padding-top: 110px;
+  padding-top: 115px;
   background-image: linear-gradient(#d0b68f,#30445c);
 }
 
@@ -7,6 +7,7 @@
   background-color: #30445C;
   margin: 10px auto;
   margin-top: 0px;
+  padding-top: 10px;
 }
 
 .homepage {
@@ -24,11 +25,14 @@
   height: 30vh;
 }
 
-.board, .calendar {
+.board {
   border: 3px solid #30445C;
   border-radius: 2.5%;
-  margin: 16.5px auto;
+  margin: 20px auto;
 }
 
-
-
+.calendar {
+  border: 3px solid #30445C;
+  border-radius: 2.5%;
+  margin: 5px auto;
+}
