@@ -1,6 +1,7 @@
 .account-layout {
     background-color: #30445C;
     height: 100vh;
+    padding-top: 150px;
 }
 
 .account-title {
@@ -18,7 +19,6 @@
     margin: 20px auto;
     font-size: 15px;
     text-align: center;
-    
 }
 .add-account-link {
     text-decoration: none;

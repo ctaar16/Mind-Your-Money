@@ -9,20 +9,22 @@ import { NavLink } from 'react-router-dom';
 
 const MyAccount = () => {
   return (
-    <div className="account-layout">
-        <Layout/>
-        <h1 className="account-title">Account Summary</h1>
-        <div className="account-lists">
-            <Checking/>
-            <Savings/>
-            <CreditCards/>
-            <Rewards/>
-        </div>
-          <button className="add-account-button">
-        <NavLink className="add-account-link" to="/AddAccount">
-            <strong className="add-account-text">Add Account<img className="button-add-icon" src={process.env.PUBLIC_URL + 'assets/Add-Icon.png'} alt="Add"/></strong>
-        </NavLink>
-          </button>
+    <div>
+      <Layout/>
+      <div className="account-layout">
+          <h1 className="account-title">Account Summary</h1>
+          <div className="account-lists">
+              <Checking/>
+              <Savings/>
+              <CreditCards/>
+              <Rewards/>
+          </div>
+            <button className="add-account-button">
+          <NavLink className="add-account-link" to="/AddAccount">
+              <strong className="add-account-text">Add Account<img className="button-add-icon" src={process.env.PUBLIC_URL + 'assets/Add-Icon.png'} alt="Add"/></strong>
+          </NavLink>
+            </button>
+      </div>
     </div>
   )
 }
