@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './MyAccount.css';
 import Layout from '../../components/shared/Layout/Layout';
 import Checking from '../../components/Checking/Checking';
@@ -6,8 +6,20 @@ import Savings from '../../components/Savings/Savings';
 import CreditCards from '../../components/CreditCards/CreditCards';
 import Rewards from '../../components/Rewards/Rewards';
 import { NavLink } from 'react-router-dom';
+import { getAccounts } from '../../services/accounts'
 
 const MyAccount = () => {
+  const [allAccounts, setAllAccounts] = useState([])
+
+  useEffect(() => {
+    const fetchAccounts = async () => {
+      const accounts = await getAccounts()
+      setAllAccounts(accounts)
+    }
+    fetchAccounts()
+  }, [])
+
+
   return (
     <div>
       <Layout/>
