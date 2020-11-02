@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from './drop';
-import Layout from "../shared/Layout/Layout"
+// import Layout from "../shared/Layout/Layout"
 import "./Options.css"
 
 function Options() {
@@ -28,9 +28,9 @@ function Options() {
   };
 
   return (
-    <>
+    <div className="this">
       <nav className='options'>
-        <Layout/>
+        
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li
             className='nav-item'
@@ -47,9 +47,8 @@ function Options() {
             {dropdown && <Dropdown />}
           </li>
         </ul>
-      
       </nav>
-    </>
+    </div>
   );
 }
 
