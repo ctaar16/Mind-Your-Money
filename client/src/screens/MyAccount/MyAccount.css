@@ -1,0 +1,17 @@
+.account-layout {
+    background-color: #30445C;
+    height: 100vh;
+}
+
+.account-title {
+    color: white;
+}
+
+.add-account-button {
+    background-color: #D0B68F;
+    width: 150px;
+    padding: 8px;
+    border-radius: 2px;
+    border: none;
+    margin: 20px;
+}
