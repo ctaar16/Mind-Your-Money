@@ -32,15 +32,15 @@ const EditChecking = (props) => {
     })
 
     const [isUpdated, setUpdated] = useState(false)
-    let { id } = useParams()
-  
+    let  params  = useParams()
+    console.log(params)
     useEffect(() => {
       const fetchAccout = async () => {
-          const account = await getAccount(id)
+          const account = await getAccount(params.id)
           setAccount(account)
       }
       fetchAccout()
-  }, [id])
+  }, [params.id])
 
   
   
@@ -50,12 +50,15 @@ const EditChecking = (props) => {
             ...account,
             [name]: value
     })
+    console.log(account)
 }
 
 const handleSubmit = async (event) => {
   event.preventDefault()
-  let { id } = props.match.params
-  const updated = await updateAccount(id, account)
+  console.log("FIRED--------------------------------")
+  //let { id } = props.match.params
+  const updated = await updateAccount(params.id, account)
+  console.log(updated)
   setUpdated(true)
 }
 
@@ -68,8 +71,8 @@ if (isUpdated) {
       <Layout />
       <div className="mimi">
       <h1 className="title">Edit Checking</h1>
-        <form className="pepperoni" onSubmit={handleSubmit}>
-      
+        <form className="pepperoni" >
+      {/* onSubmit={handleSubmit} */}
         <input
         className="first"
         type="text"
@@ -152,7 +155,7 @@ if (isUpdated) {
       />
       </form>
       <div>
-          <button type="submit" className="save">Save Changes</button>
+          <button type="submit" className="save" onClick={handleSubmit}>Save Changes</button>
           <button type="submit" className="delete">Delete Account</button>
         </div>
       </div>
