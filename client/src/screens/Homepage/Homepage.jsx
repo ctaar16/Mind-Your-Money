@@ -12,16 +12,16 @@ const Homepage = () => {
         </div>
         <div className="homepage">
           <div className="boards-container">
-          <h2>
+          <h1>
             Vision Boards
-          </h2>
+          </h1>
             <img className="board" src={process.env.PUBLIC_URL + 'assets/Car-Mood-Board.png'} alt="Car" />
             <img className="board" src={process.env.PUBLIC_URL + 'assets/Travel-Mood-Board.png'} alt="Travel" />
           </div>
           <div className="calendar-container">
-          <h2>
+          <h1>
             Calendar
-          </h2>
+          </h1>
             <img className="calendar" src={process.env.PUBLIC_URL + 'assets/Big-Calendar.png'} alt="Calendar" />
           </div>
         </div>

@@ -9,7 +9,7 @@
   justify-content: space-around;
   margin: 0 auto;
   height: 100vh;
-  padding: 10px;
+  padding: 10px auto;
 }
 
 .boards-container {
@@ -17,9 +17,12 @@
   height: 30vh;
 }
 
-.board {
-  padding: 10px;
+.board, .calendar {
+  border: 3px solid #30445C;
+  border-radius: 2.5%;
+  margin: 16.5px auto;
 }
+
 
 .progress-bar {
   background-color: #30445C;
