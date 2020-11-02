@@ -26,7 +26,7 @@ const MyAccount = () => {
       <div className="account-layout">
           <h1 className="account-title">Account Summary</h1>
           <div className="account-lists">
-              <Checking/>
+              <Checking id="5fa075c23b0f19261d1fdd4f"/>
               <Savings/>
               <CreditCards/>
               <Rewards/>

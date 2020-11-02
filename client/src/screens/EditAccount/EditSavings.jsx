@@ -42,6 +42,7 @@ const EditSavings = (props) => {
     <div>
       <Layout />
       <div className="mimi">
+      <h1 className="title">Edit Savings</h1>
         <form className="pepperoni" onSubmit={handleSubmit}>
       
         <input
