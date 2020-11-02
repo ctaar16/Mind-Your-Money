@@ -1,5 +1,12 @@
 .homepage-container {
+  padding-top: 110px;
   background-image: linear-gradient(#d0b68f,#30445c);
+}
+
+.progress-bar {
+  background-color: #30445C;
+  margin: 10px auto;
+  margin-top: 0px;
 }
 
 .homepage {
@@ -24,7 +31,4 @@
 }
 
 
-.progress-bar {
-  background-color: #30445C;
-}
 
