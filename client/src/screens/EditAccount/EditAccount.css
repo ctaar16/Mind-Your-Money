@@ -1,12 +1,14 @@
 
 .bottom {
     background-color: #30445C;
-    margin: 0px 0px 40px 0px;
+    margin: 0px 0px 100px 0px;
+    padding-top: 150px;
 }
 
 .title {
     color: white;
-    font: Roboto bold 18px;;
+    font: Roboto bold 18px;
+
 }
 
 h1{
@@ -18,7 +20,8 @@ form{
     flex-direction: column;
     align-items: center;
     align-content: center;
-    margin: 5px 3px 10px 3px;
+    margin: 0px 3px 10px 3px;
+    padding-top: 10px;
 }
 
 .first{
@@ -31,13 +34,13 @@ form{
 .exp, .ccv {
     width: 67px;
     text-align: center;
-    margin: 5px 3px 0px 3px;
+    margin: 10px 3px 0px 3px;
     border-radius: 4px;
 }
 
 
 .save, .delete {
-    margin: 10px 5px 100px 5px;
+    margin: 10px 5px 900px 5px;
     border: solid 1px #D0B68F;
     background-color: #D0B68F;
     padding: 3px;
