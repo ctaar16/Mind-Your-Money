@@ -4,50 +4,50 @@ import { useParams, Redirect } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import { getAccount, updateAccount } from "../../services/accounts";
 
-const EditAccount = () => {
-  //   const [account setAccount] = useState({
-  //     accountType: '',
-  //     accountNumber: '',
-  //     routingNumber: '',
-  //     creditCardExp: '',
-  //     creditCardccv: '',
-  //     firstName: '',
-  //     lastName: '',
-  //     address: '',
-  //     address2: '',
-  //     city: '',
-  //     state: '',
-  //     zip: ''
-  //   })
+const EditAccount = (props) => {
+    const [account, setAccount] = useState({
+      accountType: '',
+      accountNumber: '',
+      routingNumber: '',
+      creditCardExp: '',
+      creditCardccv: '',
+      firstName: '',
+      lastName: '',
+      address: '',
+      address2: '',
+      city: '',
+      state: '',
+      zip: ''
+    })
 
-  // const [isUpdated, setUpdated] = useState(false)
-  // let { id } = useParams ()
+  const [isUpdated, setUpdated] = useState(false)
+  let { id } = useParams ()
 
-  // useEffect (() => {
-  //   const fetchAccount = async () => {
-  //     const account = await getAccount(id)
-  //     setAccount(account)
-  //   }
-  //   fetchAccount()
-  // }, [id])
+  useEffect (() => {
+    const fetchAccount = async () => {
+      const account = await getAccount(id)
+      setAccount(account)
+    }
+    fetchAccount()
+  }, [id])
 
-  // const handleChange = (event) => {
-  //   const {name, value} = event.target
-  //   setAccount({
-  //     ...account,
-  //     [name]:value
-  //   })
-  // }
+  const handleChange = (event) => {
+    const {name, value} = event.target
+    setAccount({
+      ...account,
+      [name]:value
+    })
+  }
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault()
-  //   let { id } = propls.match.useParams
-  //   const updated = await updatedAccount (id, account)
-  //   setUpdated(updated)
-  // }
-  // if (isUpdated) {
-  //   return <Redirect to ={`/accounts/${props.match.params.id}`} />
-  // }
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    let { id } = props.match.useParams
+    const updated = await updateAccount (id, account)
+    setUpdated(updated)
+  }
+  if (isUpdated) {
+    return <Redirect to ={`/accounts/${props.match.params.id}`} />
+  }
 
   return (
     <div>
@@ -63,6 +63,7 @@ const EditAccount = () => {
             type="text"
             name="accountnumber"
             placeholder="Account Number"
+            onChange={handleChange}
           />
         </div>
         <input
@@ -70,6 +71,7 @@ const EditAccount = () => {
           type="text"
           name="routingnumber"
           placeholder="Routing Number"
+          onChange={handleChange}
         />
         <div></div>
 
@@ -79,62 +81,71 @@ const EditAccount = () => {
             type="text"
             name="expirationnumber"
             placeholder="EXP 01/25"
+            onChange={handleChange}
           />
           <input
             className="ccv"
             type="text"
             name="accountccv"
             placeholder="CCV"
+            onChange={handleChange}
           />
         </div>
 
         <div>
-          <form>
+          <form onSubmit ={handleSubmit}>
             <input
               className="first"
               type="text"
               name="firstname"
               placeholder="First Name"
+              onChange={handleChange}
             />
             <input
               className="first"
               type="text"
               name="lasttname"
               placeholder="Last Name"
+              onChange={handleChange}
             />
             <input
               className="first"
               type="text"
               name="Address"
               placeholder="Address"
+              onChange={handleChange}
             />
             <input
               className="first"
               type="text"
               name="Address2"
               placeholder="Address2"
+              onChange={handleChange}
             />
             <input
               className="first"
               type="text"
               name="city"
               placeholder="City"
+              onChange={handleChange}
             />
             <input
               className="first"
               type="text"
               name="state"
               placeholder="State"
+              onChange={handleChange}
             />
             <input
               className="first"
               type="text"
               name="zip"
               placeholder="Zip Code"
+              onChange={handleChange}
             />
           </form>
-          <button className="save">Save Changes</button>
-          <button className="delete">Delete Account</button>
+          <button type="submit" className="save">Save Changes</button>
+          <button type="submit" className="delete">Delete Account</button>
         </div>
       </div>
     </div>
