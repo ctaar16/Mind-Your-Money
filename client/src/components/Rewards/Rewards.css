@@ -9,10 +9,11 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 80vw;
     padding: 5px;
-     color: white;
+    color: white;
+    font-size: 20px;
 }
 
 .rewards-options {

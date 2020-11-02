@@ -9,13 +9,14 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 80vw;
     padding: 5px;
 }
 
 .checking-title {
      color: white;
+     font-size: 20px;
 }
 
 .checking-list {
@@ -24,7 +25,7 @@
 }
 
 .checking-button {
-    border-radius: 4px;
+    width: 40px;
 }
 
 .checking-item {
