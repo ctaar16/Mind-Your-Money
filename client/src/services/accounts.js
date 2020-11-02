@@ -30,6 +30,7 @@ export const createAccount = async account => {
 export const updateAccount = async (id, account) => {
   try {
       const response = await api.put(`/accounts/${id}`, account)
+      console.log(response)
       return response.data
   } catch (error) {
       throw error
