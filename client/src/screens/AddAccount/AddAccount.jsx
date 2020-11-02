@@ -4,12 +4,15 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Checkings from '../../components/DropDown/checkings';
 import Savings from '../../components/DropDown/savings'
 import CreditCard from '../../components/DropDown/creditcard'
+import Layout from '../../components/shared/Layout/Layout'
 import "./AddAccount.css"
 
 function App() {
   return (
+    <div>
+      <Layout/>
     <div className="add-account-layout">
-    <Router>
+      <Router>
       <Option />
       <Switch>
         <Route path='/checkings' exact component={Checkings} />
@@ -18,6 +21,7 @@ function App() {
       </Switch>
       </Router>
       </div>
+    </div>
   );
 }
 

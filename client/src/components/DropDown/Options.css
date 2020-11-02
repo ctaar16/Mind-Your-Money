@@ -1,15 +1,21 @@
 .options {
   background-color: #30445c;
   /* height: 100vh; */
+  /* padding-top: 150px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
 }
 
 .nav-menu {
-  display: grid;
-  grid-gap: 10px;
+  display: flex;
+  flex-direction: column;
   list-style: none;
   text-align: center;
-  justify-content: center;
+  align-items: center;
   background-color: #30445c;
+  padding-right: 40px;
 }
 
 .nav-item {
