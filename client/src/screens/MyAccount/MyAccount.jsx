@@ -10,7 +10,6 @@ import { getAccounts } from "../../services/accounts";
 import AddIcon from "../../assets/Add-Icon.png";
 
 const MyAccount = () => {
-  const [allAccounts, setAllAccounts] = useState([]);
   const [getChecking, setChecking] = useState([]);
   const [getSavings, setSavings] = useState([]);
   const [getCreditCards, setCreditCards] = useState([]);
@@ -18,7 +17,6 @@ const MyAccount = () => {
   useEffect(() => {
     const fetchAccounts = async () => {
       const accounts = await getAccounts();
-      setAllAccounts(accounts);
       setChecking(
         accounts.filter((account) => account.accountType === "Checking")
       );
