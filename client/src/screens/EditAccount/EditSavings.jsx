@@ -65,7 +65,7 @@ const EditSavings = (props) => {
   return (
     <div>
       <Layout />
-      <div className="mimi">
+      <div className="mimi2">
         <h1 className="title">Edit Savings</h1>
         <form className="pepperoni" >
 

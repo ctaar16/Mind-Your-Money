@@ -5,7 +5,7 @@ import { createAccount } from "../../services/accounts";
 
 function AddAccount(props) {
   const [account, setAccount] = useState({
-    accountType: 'Checking',
+    accountType: 'Savings',
     accountNumber: '',
     routingNumber: '',
     creditCardExp: 'N/A',
