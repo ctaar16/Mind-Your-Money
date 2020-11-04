@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./creditcard.css"
 import { useParams, Redirect } from "react-router-dom";
 import { createAccount } from "../../services/accounts";
+import Layout from "../shared/Layout/Layout"
 
 function AddAccount(props) {
   const [account, setAccount] = useState({
@@ -42,6 +43,8 @@ function AddAccount(props) {
   }
 
   return (
+    <div>
+      <Layout/>
     <div className="mimi">
       <h1 className="title">New Credit Card</h1>
         <form className="pepperoni" >
@@ -53,7 +56,7 @@ function AddAccount(props) {
             value={account.accountNumber}
             onChange={handleChange}
             placeholder="Card Number"
-          />
+            />
 
           <div>
             <input
@@ -72,7 +75,7 @@ function AddAccount(props) {
               value={account.creditCardccv}
               onChange={handleChange}
               placeholder="CCV"
-            />
+              />
           </div>
 
           <input
@@ -82,7 +85,7 @@ function AddAccount(props) {
             value={account.firstName}
             onChange={handleChange}
             placeholder="First Name"
-          />
+            />
 
           <input
             className="first"
@@ -91,7 +94,7 @@ function AddAccount(props) {
             value={account.lastName}
             onChange={handleChange}
             placeholder="Last Name"
-          />
+            />
 
           <input
             className="first"
@@ -100,7 +103,7 @@ function AddAccount(props) {
             value={account.address}
             onChange={handleChange}
             placeholder="Address"
-          />
+            />
 
           <input
             className="first"
@@ -109,7 +112,7 @@ function AddAccount(props) {
             value={account.address2}
             onChange={handleChange}
             placeholder="Address2"
-          />
+            />
 
           <input
             className="first"
@@ -118,7 +121,7 @@ function AddAccount(props) {
             value={account.city}
             onChange={handleChange}
             placeholder="City"
-          />
+            />
 
           <input
             className="first"
@@ -127,7 +130,7 @@ function AddAccount(props) {
             value={account.state}
             onChange={handleChange}
             placeholder="State"
-          />
+            />
 
           <input
             className="first"
@@ -136,12 +139,13 @@ function AddAccount(props) {
             value={account.zip}
             onChange={handleChange}
             placeholder="Zip Code"
-          />
+            />
         </form>
         <div>
           <button className="wax" onClick={handleSubmit}>Submit</button>
         </div>
     </div>
+            </div>
   );
 }
 

@@ -7,6 +7,9 @@ import EditCreditCards from './screens/EditAccount/EditCreditCards'
 import AddAccount from './screens/AddAccount/AddAccount'
 import MyAccount from './screens/MyAccount/MyAccount'
 import { Route, Switch } from 'react-router-dom'
+import Checkings from '../../client/src/components/DropDown/checkings'
+import Savings from '../../client/src/components/DropDown/savings'
+import CreditCard from '../../client/src/components/DropDown/creditcard'
 
 const App = () => {
   return (
@@ -18,6 +21,9 @@ const App = () => {
         <Route exact path="/EditCreditCards/:id/edit" component={EditCreditCards} />
         <Route exact path="/AddAccount" component={AddAccount} />
         <Route exact path="/MyAccount" component={MyAccount} />
+        <Route path='/checkings' exact component={Checkings} />
+        <Route path='/savings' exact component={Savings} />
+        <Route path='/creditcard' exact component={CreditCard} />
       </Switch>
     </div>
   )
