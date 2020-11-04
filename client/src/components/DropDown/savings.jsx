@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./savings.css";
-import { useParams, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { createAccount } from "../../services/accounts";
 import Layout from "../shared/Layout/Layout";
 
@@ -32,7 +32,7 @@ function AddAccount(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const updated = await createAccount(account);
+    await createAccount(account);
     setUpdated(true);
   };
 

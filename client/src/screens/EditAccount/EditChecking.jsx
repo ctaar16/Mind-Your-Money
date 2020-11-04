@@ -44,13 +44,13 @@ const EditChecking = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const updated = await updateAccount(params.id, account);
+    await updateAccount(params.id, account);
     setUpdated(true);
   };
 
   const handleDelete = async (event) => {
     event.preventDefault();
-    const updated = await deleteAccount(params.id);
+    await deleteAccount(params.id);
     setUpdated(true);
   };
 

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./Savings.css";
-import { NavLink, Route, useParams } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import EditSavings from "../../screens/EditAccount/EditSavings";
 import EditIcon from "../../assets/Edit-Icon.png";
 
 function Savings(props) {
   const [getID, setID] = useState("");
-  const { id } = useParams();
+
   return (
     <div className="savings-layout">
       <div className="savings-title-bar">
