@@ -22,6 +22,9 @@
 .savings-list {
     width: 80vw;
     text-align: left;
+    background-color: #F0EEEE;
+    padding: 5px;
+    border-radius: 4px;
 }
 
 .savings-button {
