@@ -19,6 +19,8 @@ function AddAccount(props) {
     zip: ''
   })
 
+  const [isUpdated, setUpdated] = useState(false)
+
   const handleChange = (event) => {
     const { name, value } = event.target
     setAccount({
@@ -32,10 +34,10 @@ function AddAccount(props) {
     event.preventDefault()
     const created = await createAccount(account)
     console.log(created)
-    saved()
+    setUpdated(true)
   }
 
-  const saved = () => {
+  if (isUpdated) {
     return <Redirect to="/MyAccount" />
   }
 
