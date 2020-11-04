@@ -5,7 +5,7 @@ const Account = new Schema(
   {
     accountType: { type: String, required: false },
     accountNumber: { type: String, required: true },
-    routingNumber: { type: String, required: true },
+    routingNumber: { type: String, required: false },
     creditCardExp: { type: String, required: false },
     creditCardccv: { type: String, required: false },
     firstName: { type: String, required: true },

@@ -41,7 +41,7 @@ function AddAccount(props) {
 
   return (
     <div className="mimi">
-      <h1 className="title">New Checking</h1>
+      <h1 className="title">New Checking Account</h1>
         <form className="pepperoni" >
 
           <input

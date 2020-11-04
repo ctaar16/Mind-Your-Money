@@ -41,7 +41,7 @@ function AddAccount(props) {
 
   return (
     <div className="mimi">
-      <h1 className="title">New Checking</h1>
+      <h1 className="title">New Savings Account</h1>
         <form className="pepperoni" >
 
           <input
@@ -126,7 +126,7 @@ function AddAccount(props) {
           />
         </form>
         <div>
-          <button className="save" onClick={handleSubmit}>Submit</button>
+          <button className="wax" onClick={handleSubmit}>Submit</button>
         </div>
     </div>
   );

@@ -30,8 +30,8 @@ function AddAccount(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const updated = await createAccount(account)
-    console.log(updated)
+    const created = await createAccount(account)
+    console.log(created)
     saved()
   }
 
@@ -41,7 +41,7 @@ function AddAccount(props) {
 
   return (
     <div className="mimi">
-      <h1 className="title">Edit Credit Card</h1>
+      <h1 className="title">New Credit Card</h1>
         <form className="pepperoni" >
 
           <input
@@ -137,7 +137,7 @@ function AddAccount(props) {
           />
         </form>
         <div>
-          <button className="save" onClick={handleSubmit}>Submit</button>
+          <button className="wax" onClick={handleSubmit}>Submit</button>
         </div>
     </div>
   );
