@@ -2,38 +2,26 @@ import React, { useState, useEffect } from "react";
 import "./EditAccount.css";
 import { useParams, Redirect } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
-import { getAccount, updateAccount } from "../../services/accounts";
+import { getAccount, updateAccount, deleteAccount } from "../../services/accounts";
 
 const EditChecking = (props) => {
-  
-    // const [accountType, setAccountType] = useState("");
-    // const [accountNumber, setAccountNumber] = useState("");
-    // const [routingNumber, setRoutingNumber] = useState("");
-    // const [firstName, setFirstName] = useState("");
-    // const [lastName, setLastName] = useState("");
-    // const [address, setAddress] = useState("");
-    // const [address2, setAddress2] = useState("");
-    // const [city, setCity] = useState("");
-    // const [state, setState] = useState("");
-    // const [zip, setZip] = useState("");
     const [account, setAccount] = useState({
-      accountType: 'checking',
-      accountNumber: 'Placeholder',
-      routingNumber: 'Placeholder',
+      accountType: 'Checking',
+      accountNumber: '',
+      routingNumber: '',
       creditCardExp: 'N/A',
       creditCardccv: 'N/A',
-      firstName: 'Placeholder',
-      lastName: 'Placeholder',
-      address: 'Placeholder',
-      address2: 'Placeholder',
-      city: 'Placeholder',
-      state: 'Placeholder',
-      zip: 'Placeholder'
+      firstName: '',
+      lastName: '',
+      address: '',
+      address2: '',
+      city: '',
+      state: '',
+      zip: ''
     })
 
     const [isUpdated, setUpdated] = useState(false)
     let  params  = useParams()
-    console.log(params)
     useEffect(() => {
       const fetchAccout = async () => {
           const account = await getAccount(params.id)
@@ -55,8 +43,7 @@ const EditChecking = (props) => {
 
 const handleSubmit = async (event) => {
   event.preventDefault()
-  console.log("FIRED--------------------------------")
-  //let { id } = props.match.params
+  // let { id } = props.match.params
   const updated = await updateAccount(params.id, account)
   console.log(updated)
   setUpdated(true)
@@ -70,93 +57,93 @@ if (isUpdated) {
     <div>
       <Layout />
       <div className="mimi">
-      <h1 className="title">Edit Checking</h1>
+        <h1 className="title">Edit Checking</h1>
         <form className="pepperoni" >
-      {/* onSubmit={handleSubmit} */}
-        <input
-        className="first"
-        type="text"
-        name="accountNumber"
-        value={account.accountNumber}
-        onChange={handleChange}
-        placeholder="Account Number"
-      />
 
-        <input
-        className="first"
-        type="text"
-        name="routingNumber"
-        value={account.routingNumber}
-        onChange={handleChange}
-        placeholder="Routing Number"
-      />
+          <input
+            className="first"
+            type="text"
+            name="accountNumber"
+            value={account.accountNumber}
+            onChange={handleChange}
+            placeholder={account.accountNumber || "Account Number"}
+          />
 
-        <input
-        className="first"
-        type="text"
-        name="firstName"
-        value={account.firstName}
-        onChange={handleChange}
-          placeholder={account.firstName}
-      />
+          <input
+            className="first"
+            type="text"
+            name="routingNumber"
+            value={account.routingNumber}
+            onChange={handleChange}
+            placeholder={account.routingNumber || "Routing Number"}
+          />
 
-      <input
-        className="first"
-        type="text"
-        name="lastName"
-        value={account.lastName}
-        onChange={handleChange}
-          placeholder={account.lastName}
-      />
+          <input
+            className="first"
+            type="text"
+            name="firstName"
+            value={account.firstName}
+            onChange={handleChange}
+            placeholder={account.firstName || "First Name"}
+          />
 
-      <input
-        className="first"
-        type="text"
-        name="address"
-        value={account.address}
-        onChange={handleChange}
-          placeholder="Address"
-      />
+          <input
+            className="first"
+            type="text"
+            name="lastName"
+            value={account.lastName}
+            onChange={handleChange}
+            placeholder={account.lastName || "Last Name"}
+          />
 
-      <input
-        className="first"
-        type="text"
-        name="address2"
-        value={account.address2}
-        onChange={handleChange}
-          placeholder="Address2"
-      />
+          <input
+            className="first"
+            type="text"
+            name="address"
+            value={account.address}
+            onChange={handleChange}
+            placeholder={account.address || "Address"}
+          />
 
-      <input
-        className="first"
-        type="text"
-        name="city"
-        value={account.city}
-        onChange={handleChange}
-          placeholder="City"
-      />
+          <input
+            className="first"
+            type="text"
+            name="address2"
+            value={account.address2}
+            onChange={handleChange}
+            placeholder={account.address2 || "Address2"}
+          />
 
-      <input
-        className="first"
-        type="text"
-        name="state"
-        value={account.state}
-        onChange={handleChange}
-          placeholder="State"
-      />
+          <input
+            className="first"
+            type="text"
+            name="city"
+            value={account.city}
+            onChange={handleChange}
+            placeholder={account.city || "City"}
+          />
 
-      <input
-        className="first"
-        type="text"
-        name="zip"
-        value={account.zip}
-        onChange={handleChange}
-          placeholder="Zip Code"
-      />
-      </form>
-      <div>
-          <button type="submit" className="save" onClick={handleSubmit}>Save Changes</button>
-          <button type="submit" className="delete">Delete Account</button>
+          <input
+            className="first"
+            type="text"
+            name="state"
+            value={account.state}
+            onChange={handleChange}
+            placeholder={account.state || "State"}
+          />
+
+          <input
+            className="first"
+            type="text"
+            name="zip"
+            value={account.zip}
+            onChange={handleChange}
+            placeholder={account.zip || "Zip Code"}
+          />
+        </form>
+        <div>
+          <button className="save" onClick={handleSubmit}>Save Changes</button>
+          <button className="delete" onClick={() => deleteAccount(params.id)}>Delete Account</button>
         </div>
       </div>
     </div>

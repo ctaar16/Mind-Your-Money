@@ -1,127 +1,144 @@
 import React, { useState } from 'react';
 import "./creditcard.css"
-function AddAccount(props) {
-  // const [accountType, setAccountType] = useState("");
-  const [accountNumber, setAccountNumber] = useState("");
-  const [creditCardExp, setCreditCardExp] = useState("");
-  const [creditCardccv, setCreditCardccv] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [address, setAddress] = useState("");
-  const [address2, setAddress2] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [zip, setZip] = useState("");
+import { useParams, Redirect } from "react-router-dom";
+import { createAccount } from "../../services/accounts";
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const fields = {
-      // accountType,
-      accountNumber,
-      creditCardExp,
-      creditCardccv,
-      firstName,
-      lastName,
-      address,
-      address2,
-      city,
-      state,
-      zip
-    };
-  };
+function AddAccount(props) {
+  const [account, setAccount] = useState({
+    accountType: 'CreditCard',
+    accountNumber: '',
+    routingNumber: 'N/A',
+    creditCardExp: '',
+    creditCardccv: '',
+    firstName: '',
+    lastName: '',
+    address: '',
+    address2: '',
+    city: '',
+    state: '',
+    zip: ''
+  })
 
   const handleChange = (event) => {
-    props.onChange(event.target.value)
-}
+    const { name, value } = event.target
+    setAccount({
+            ...account,
+            [name]: value
+    })
+    console.log(account)
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const created = await createAccount(account)
+    console.log(created)
+    saved()
+  }
+
+  const saved = () => {
+    return <Redirect to="/MyAccount" />
+  }
 
   return (
     <div className="mimi">
-    <form className="pepperoni" onSubmit={handleSubmit}>
-      
-      <input
-        className="first"
-        type="text"
-        value={accountNumber}
-          onChange={(e) => setAccountNumber(e.target.value)}
-          placeholder="Credit Card Number"
-      />
-        <div>  
-      <input
-        className="exp"
-        type="text"
-        value={creditCardExp}
-        onChange={(e) => setCreditCardExp(e.target.value)}
-        placeholder="Exp."
-        />
+      <h1 className="title">New Credit Card</h1>
+        <form className="pepperoni" >
 
-      <input
-        className="ccv"
-        type="text"
-        value={creditCardccv}
-        onChange={(e) => setCreditCardccv(e.target.value)}
-        placeholder="CCV"
-        />
+          <input
+            className="first"
+            type="text"
+            name="accountNumber"
+            value={account.accountNumber}
+            onChange={handleChange}
+            placeholder="Card Number"
+          />
+
+          <div>
+            <input
+              className="exp"
+              type="text"
+              name="creditCardExp"
+              value={account.creditCardExp}
+              onChange={handleChange}
+              placeholder="EXP"
+            />
+
+            <input
+              className="ccv"
+              type="text"
+              name="creditCardccv"
+              value={account.creditCardccv}
+              onChange={handleChange}
+              placeholder="CCV"
+            />
+          </div>
+
+          <input
+            className="first"
+            type="text"
+            name="firstName"
+            value={account.firstName}
+            onChange={handleChange}
+            placeholder="First Name"
+          />
+
+          <input
+            className="first"
+            type="text"
+            name="lastName"
+            value={account.lastName}
+            onChange={handleChange}
+            placeholder="Last Name"
+          />
+
+          <input
+            className="first"
+            type="text"
+            name="address"
+            value={account.address}
+            onChange={handleChange}
+            placeholder="Address"
+          />
+
+          <input
+            className="first"
+            type="text"
+            name="address2"
+            value={account.address2}
+            onChange={handleChange}
+            placeholder="Address2"
+          />
+
+          <input
+            className="first"
+            type="text"
+            name="city"
+            value={account.city}
+            onChange={handleChange}
+            placeholder="City"
+          />
+
+          <input
+            className="first"
+            type="text"
+            name="state"
+            value={account.state}
+            onChange={handleChange}
+            placeholder="State"
+          />
+
+          <input
+            className="first"
+            type="text"
+            name="zip"
+            value={account.zip}
+            onChange={handleChange}
+            placeholder="Zip Code"
+          />
+        </form>
+        <div>
+          <button className="wax" onClick={handleSubmit}>Submit</button>
         </div>
-
-      <input
-        className="first"
-        type="text"
-        value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          placeholder="First Name"
-      />
-
-      <input
-        className="first"
-        type="text"
-        value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          placeholder="Last Name"
-      />
-
-      <input
-        className="first"
-        type="text"
-        value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          placeholder="Address"
-      />
-
-      <input
-        className="first"
-        type="text"
-        value={address2}
-          onChange={(e) => setAddress2(e.target.value)}
-          placeholder="Address2"
-      />
-
-      <input
-        className="first"
-        type="text"
-        value={city}
-          onChange={(e) => setCity(e.target.value)}
-          placeholder="City"
-      />
-
-      <input
-        className="first"
-        type="text"
-        value={state}
-          onChange={(e) => setState(e.target.value)}
-          placeholder="State"
-      />
-
-      <input
-        className="first"
-        type="text"
-        value={zip}
-          onChange={(e) => setZip(e.target.value)}
-          placeholder="Zip Code"
-      />
-       <button className="wax">
-        Add Account
-      </button>
-    </form>
     </div>
   );
 }

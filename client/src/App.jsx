@@ -14,8 +14,8 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/EditChecking/:id/edit" component={EditChecking} />
-        <Route exact path="/EditSavings" component={EditSavings} />
-        <Route exact path="/EditCreditCards" component={EditCreditCards} />
+        <Route exact path="/EditSavings/:id/edit" component={EditSavings} />
+        <Route exact path="/EditCreditCards/:id/edit" component={EditCreditCards} />
         <Route exact path="/AddAccount" component={AddAccount} />
         <Route exact path="/MyAccount" component={MyAccount} />
       </Switch>

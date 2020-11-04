@@ -7,14 +7,21 @@ import CreditCards from '../../components/CreditCards/CreditCards';
 import Rewards from '../../components/Rewards/Rewards';
 import { NavLink } from 'react-router-dom';
 import { getAccounts } from '../../services/accounts'
+import AddIcon from "../../assets/Add-Icon.png"
 
 const MyAccount = () => {
   const [allAccounts, setAllAccounts] = useState([])
+  const [getChecking, setChecking] = useState([])
+  const [getSavings, setSavings] = useState([])
+  const [getCreditCards, setCreditCards] = useState([])
 
   useEffect(() => {
     const fetchAccounts = async () => {
       const accounts = await getAccounts()
       setAllAccounts(accounts)
+      setChecking(accounts.filter((account) => account.accountType === "Checking"))
+      setSavings(accounts.filter((account) => account.accountType === "Savings"))
+      setCreditCards(accounts.filter((account) => account.accountType === "CreditCard"))
     }
     fetchAccounts()
   }, [])
@@ -26,14 +33,14 @@ const MyAccount = () => {
       <div className="account-layout">
           <h1 className="account-title">Account Summary</h1>
           <div className="account-lists">
-              <Checking id="5fa075c23b0f19261d1fdd4f"/>
-              <Savings/>
-              <CreditCards/>
+              <Checking accounts={getChecking}/>
+              <Savings accounts={getSavings}/>
+              <CreditCards accounts={getCreditCards}/>
               <Rewards/>
           </div>
             <button className="add-account-button">
           <NavLink className="add-account-link" to="/AddAccount">
-              <strong className="add-account-text">Add Account<img className="button-add-icon" src={process.env.PUBLIC_URL + 'assets/Add-Icon.png'} alt="Add"/></strong>
+              <strong className="add-account-text">Add Account<img className="button-add-icon" src={AddIcon} alt="Add"/></strong>
           </NavLink>
             </button>
       </div>
