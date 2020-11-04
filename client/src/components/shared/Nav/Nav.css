@@ -1,0 +1,26 @@
+.nav-container {
+  width: 100vw;
+  background-image: linear-gradient(#30445c, #98acbb);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.nav-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  min-height: 100px;
+  max-height: 100px;
+  max-width: 150px;
+}
+
+p {
+  position: fixed;
+  top: 85px;
+  color: white;
+}

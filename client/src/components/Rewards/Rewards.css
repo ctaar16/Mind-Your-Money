@@ -1,0 +1,25 @@
+.rewards-layout {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.rewards-title {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+.rewards-options {
+  width: 80vw;
+  text-align: left;
+  background-color: #f0eeee;
+  padding: 5px;
+  border-radius: 4px;
+}

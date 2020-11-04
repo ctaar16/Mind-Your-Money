@@ -1,0 +1,44 @@
+.mimi {
+  background-color: #30445c;
+  padding-top: 150px;
+}
+
+.title {
+  color: white;
+  font: Roboto bold 18px;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  margin: 5px 3px 10px 3px;
+}
+
+.first {
+  margin: 3px 0px 3px 0px;
+  width: 80vw;
+  border-radius: 4px;
+  background-color: whitesmoke;
+}
+
+.exp,
+.ccv {
+  width: 67px;
+  text-align: center;
+  margin: 5px 3px 0px 3px;
+  border-radius: 4px;
+}
+
+.wax {
+  margin: 10px 5px 100px 5px;
+  border: solid 1px #d0b68f;
+  background-color: #d0b68f;
+  padding: 3px;
+  border-radius: 3px;
+}

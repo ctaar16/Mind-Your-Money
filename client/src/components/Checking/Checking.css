@@ -1,0 +1,39 @@
+.checking-layout {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.checking-title-bar {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  padding: 5px;
+}
+
+.checking-title {
+  color: white;
+  font-size: 20px;
+}
+
+.checking-list {
+  width: 80vw;
+  text-align: left;
+  background-color: #f0eeee;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.checking-button {
+  width: 40px;
+}
+
+.checking-item {
+  background-color: #f0eeee;
+  padding: 5px;
+  border-radius: 4px;
+  justify-content: left;
+}
