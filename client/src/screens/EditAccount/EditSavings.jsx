@@ -21,6 +21,7 @@ const EditSavings = (props) => {
   })
 
   const [isUpdated, setUpdated] = useState(false)
+  
   let  params  = useParams()
   useEffect(() => {
     const fetchAccout = async () => {
@@ -45,6 +46,14 @@ const EditSavings = (props) => {
     event.preventDefault()
     // let { id } = props.match.params
     const updated = await updateAccount(params.id, account)
+    console.log(updated)
+    setUpdated(true)
+  }
+
+  const handleDelete = async (event) => {
+    event.preventDefault()
+    // let { id } = props.match.params
+    const updated = await deleteAccount(params.id)
     console.log(updated)
     setUpdated(true)
   }
@@ -143,7 +152,7 @@ const EditSavings = (props) => {
         </form>
         <div>
           <button className="save" onClick={handleSubmit}>Save Changes</button>
-          <button className="delete" onClick={() => deleteAccount(params.id)}>Delete Account</button>
+          <button className="delete" onClick={handleDelete}>Delete Account</button>
         </div>
       </div>
     </div>

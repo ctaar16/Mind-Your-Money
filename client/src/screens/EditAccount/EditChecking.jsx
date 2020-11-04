@@ -49,6 +49,14 @@ const handleSubmit = async (event) => {
   setUpdated(true)
 }
 
+const handleDelete = async (event) => {
+  event.preventDefault()
+  // let { id } = props.match.params
+  const updated = await deleteAccount(params.id)
+  console.log(updated)
+  setUpdated(true)
+}
+
 if (isUpdated) {
   return <Redirect to="/MyAccount" />
 }
@@ -143,7 +151,7 @@ if (isUpdated) {
         </form>
         <div>
           <button className="save" onClick={handleSubmit}>Save Changes</button>
-          <button className="delete" onClick={() => deleteAccount(params.id)}>Delete Account</button>
+          <button className="delete" onClick={handleDelete}>Delete Account</button>
         </div>
       </div>
     </div>
