@@ -51,15 +51,13 @@ export default class Hamburger extends React.Component {
         <main id="page-wrap">
         <NavLink className="link" to="/MyAccount">Accounts</NavLink>
        
-        <NavLink className="link" to="/AddAccount">Create</NavLink>
-          
-        <NavLink className="link" to="/EditAccount">Edit</NavLink>
           <a onClick={() => this.closeMenu()} className="menu-item" href="#about">
             About
           </a>
           <a onClick={() => this.closeMenu()} className="menu-item" href="#projects">
             Projects
           </a>
+          
           <a onClick={() => this.closeMenu()} className="menu-item" href="#contact">
             Contact
           </a>

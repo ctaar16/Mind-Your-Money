@@ -1,31 +1,21 @@
 import React from 'react';
 import Option from '../../components/DropDown/Options';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Checkings from '../../components/DropDown/checkings';
-import Savings from '../../components/DropDown/savings'
-import CreditCard from '../../components/DropDown/creditcard'
 import Layout from '../../components/shared/Layout/Layout'
 import "./AddAccount.css"
 
-function App() {
+function AddAccount() {
   return (
     <div>
       <Layout/>
     <div className="add-account-layout">
-      <Router>
       <Option />
-      <Switch>
-        <Route path='/checkings' exact component={Checkings} />
-        <Route path='/savings' exact component={Savings} />
-        <Route path='/creditcard' exact component={CreditCard} />
-      </Switch>
-      </Router>
+      
       </div>
     </div>
   );
 }
 
-export default App;
+export default AddAccount;
 
 
 
