@@ -2,64 +2,61 @@ import React, { useState, useEffect } from "react";
 import "./EditAccount.css";
 import { useParams, Redirect } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
-import { getAccount, updateAccount, deleteAccount } from "../../services/accounts";
+import {
+  getAccount,
+  updateAccount,
+  deleteAccount,
+} from "../../services/accounts";
 
 const EditSavings = (props) => {
   const [account, setAccount] = useState({
-    accountType: 'Savings',
-    accountNumber: '',
-    routingNumber: '',
-    creditCardExp: 'N/A',
-    creditCardccv: 'N/A',
-    firstName: '',
-    lastName: '',
-    address: '',
-    address2: '',
-    city: '',
-    state: '',
-    zip: ''
-  })
+    accountType: "Savings",
+    accountNumber: "",
+    routingNumber: "",
+    creditCardExp: "N/A",
+    creditCardccv: "N/A",
+    firstName: "",
+    lastName: "",
+    address: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip: "",
+  });
 
-  const [isUpdated, setUpdated] = useState(false)
-  
-  let  params  = useParams()
+  const [isUpdated, setUpdated] = useState(false);
+
+  let params = useParams();
   useEffect(() => {
     const fetchAccout = async () => {
-        const account = await getAccount(params.id)
-        setAccount(account)
-    }
-    fetchAccout()
-  }, [params.id])
-
-
+      const account = await getAccount(params.id);
+      setAccount(account);
+    };
+    fetchAccout();
+  }, [params.id]);
 
   const handleChange = (event) => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
     setAccount({
-            ...account,
-            [name]: value
-    })
-    console.log(account)
-  }
+      ...account,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    // let { id } = props.match.params
-    const updated = await updateAccount(params.id, account)
-    console.log(updated)
-    setUpdated(true)
-  }
+    event.preventDefault();
+    const updated = await updateAccount(params.id, account);
+    setUpdated(true);
+  };
 
   const handleDelete = async (event) => {
-    event.preventDefault()
-    // let { id } = props.match.params
-    const updated = await deleteAccount(params.id)
-    console.log(updated)
-    setUpdated(true)
-  }
+    event.preventDefault();
+    const updated = await deleteAccount(params.id);
+    setUpdated(true);
+  };
 
   if (isUpdated) {
-    return <Redirect to="/MyAccount" />
+    return <Redirect to="/MyAccount" />;
   }
 
   return (
@@ -67,8 +64,7 @@ const EditSavings = (props) => {
       <Layout />
       <div className="mimi2">
         <h1 className="title">Edit Savings</h1>
-        <form className="pepperoni" >
-
+        <form className="pepperoni">
           <input
             className="first"
             type="text"
@@ -151,8 +147,12 @@ const EditSavings = (props) => {
           />
         </form>
         <div>
-          <button className="save" onClick={handleSubmit}>Save Changes</button>
-          <button className="delete" onClick={handleDelete}>Delete Account</button>
+          <button className="save" onClick={handleSubmit}>
+            Save Changes
+          </button>
+          <button className="delete" onClick={handleDelete}>
+            Delete Account
+          </button>
         </div>
       </div>
     </div>

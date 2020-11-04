@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Dropdown from './drop';
-// import Layout from "../shared/Layout/Layout"
-import "./Options.css"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Dropdown from "./drop";
+import "./Options.css";
 
 function Options() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
-  const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   const onMouseEnter = () => {
@@ -29,20 +27,19 @@ function Options() {
 
   return (
     <div className="this">
-      <nav className='options'>
-        
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+      <nav className="options">
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li
-            className='nav-item'
+            className="nav-item"
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to='/services'
-              className='nav-links'
+              to="/services"
+              className="nav-links"
               onClick={closeMobileMenu}
             >
-              Options <i className='fas fa-caret-down' />
+              Options <i className="fas fa-caret-down" />
             </Link>
             {dropdown && <Dropdown />}
           </li>

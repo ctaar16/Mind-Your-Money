@@ -1,39 +1,39 @@
 .savings-layout {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .savings-title-bar {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80vw;
-    padding: 5px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  padding: 5px;
 }
 
 .savings-title {
-     color: white;
-     font-size: 20px;
+  color: white;
+  font-size: 20px;
 }
 
 .savings-list {
-    width: 80vw;
-    text-align: left;
-    background-color: #F0EEEE;
-    padding: 5px;
-    border-radius: 4px;
+  width: 80vw;
+  text-align: left;
+  background-color: #f0eeee;
+  padding: 5px;
+  border-radius: 4px;
 }
 
 .savings-button {
-    width: 40px;
+  width: 40px;
 }
 
 .savings-item {
-    background-color: #F0EEEE;
-    padding: 5px;
-    border-radius: 4px;
-    justify-content: left;
+  background-color: #f0eeee;
+  padding: 5px;
+  border-radius: 4px;
+  justify-content: left;
 }

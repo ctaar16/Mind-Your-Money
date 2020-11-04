@@ -1,10 +1,10 @@
 .homepage-container {
   padding-top: 115px;
-  background-image: linear-gradient(#d0b68f,#30445c);
+  background-image: linear-gradient(#d0b68f, #30445c);
 }
 
 .progress-bar {
-  background-color: #30445C;
+  background-color: #30445c;
   margin: 10px auto;
   margin-top: 0px;
   padding-top: 10px;
@@ -12,7 +12,7 @@
 
 .homepage {
   color: white;
-  display:flex;
+  display: flex;
   max-width: 80%;
   justify-content: space-around;
   margin: 0 auto;
@@ -21,18 +21,18 @@
 }
 
 .boards-container {
-  display:grid;
+  display: grid;
   height: 30vh;
 }
 
 .board {
-  border: 3px solid #30445C;
+  border: 3px solid #30445c;
   border-radius: 2.5%;
   margin: 20px auto;
 }
 
 .calendar {
-  border: 3px solid #30445C;
+  border: 3px solid #30445c;
   border-radius: 2.5%;
   margin: 5px auto;
 }

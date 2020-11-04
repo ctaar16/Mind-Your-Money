@@ -1,54 +1,51 @@
-import React, { useState } from 'react';
-import "./savings.css"
+import React, { useState } from "react";
+import "./savings.css";
 import { useParams, Redirect } from "react-router-dom";
 import { createAccount } from "../../services/accounts";
-import Layout from "../shared/Layout/Layout"
+import Layout from "../shared/Layout/Layout";
 
 function AddAccount(props) {
   const [account, setAccount] = useState({
-    accountType: 'Savings',
-    accountNumber: '',
-    routingNumber: '',
-    creditCardExp: 'N/A',
-    creditCardccv: 'N/A',
-    firstName: '',
-    lastName: '',
-    address: '',
-    address2: '',
-    city: '',
-    state: '',
-    zip: ''
-  })
+    accountType: "Savings",
+    accountNumber: "",
+    routingNumber: "",
+    creditCardExp: "N/A",
+    creditCardccv: "N/A",
+    firstName: "",
+    lastName: "",
+    address: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip: "",
+  });
 
-  const [isUpdated, setUpdated] = useState(false)
+  const [isUpdated, setUpdated] = useState(false);
 
   const handleChange = (event) => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
     setAccount({
-            ...account,
-            [name]: value
-    })
-    console.log(account)
-  }
+      ...account,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    const updated = await createAccount(account)
-    console.log(updated)
-    setUpdated(true)
-  }
+    event.preventDefault();
+    const updated = await createAccount(account);
+    setUpdated(true);
+  };
 
   if (isUpdated) {
-    return <Redirect to="/MyAccount" />
+    return <Redirect to="/MyAccount" />;
   }
 
   return (
     <div>
-      <Layout/>
-    <div className="mimi">
-      <h1 className="title">New Savings Account</h1>
-        <form className="pepperoni" >
-
+      <Layout />
+      <div className="mimi">
+        <h1 className="title">New Savings Account</h1>
+        <form className="pepperoni">
           <input
             className="first"
             type="text"
@@ -56,7 +53,7 @@ function AddAccount(props) {
             value={account.accountNumber}
             onChange={handleChange}
             placeholder="Account Number"
-            />
+          />
 
           <input
             className="first"
@@ -65,7 +62,7 @@ function AddAccount(props) {
             value={account.routingNumber}
             onChange={handleChange}
             placeholder="Routing Number"
-            />
+          />
 
           <input
             className="first"
@@ -74,7 +71,7 @@ function AddAccount(props) {
             value={account.firstName}
             onChange={handleChange}
             placeholder="First Name"
-            />
+          />
 
           <input
             className="first"
@@ -83,7 +80,7 @@ function AddAccount(props) {
             value={account.lastName}
             onChange={handleChange}
             placeholder="Last Name"
-            />
+          />
 
           <input
             className="first"
@@ -92,7 +89,7 @@ function AddAccount(props) {
             value={account.address}
             onChange={handleChange}
             placeholder="Address"
-            />
+          />
 
           <input
             className="first"
@@ -101,7 +98,7 @@ function AddAccount(props) {
             value={account.address2}
             onChange={handleChange}
             placeholder="Address2"
-            />
+          />
 
           <input
             className="first"
@@ -110,7 +107,7 @@ function AddAccount(props) {
             value={account.city}
             onChange={handleChange}
             placeholder="City"
-            />
+          />
 
           <input
             className="first"
@@ -119,7 +116,7 @@ function AddAccount(props) {
             value={account.state}
             onChange={handleChange}
             placeholder="State"
-            />
+          />
 
           <input
             className="first"
@@ -128,13 +125,15 @@ function AddAccount(props) {
             value={account.zip}
             onChange={handleChange}
             placeholder="Zip Code"
-            />
+          />
         </form>
         <div>
-          <button className="wax" onClick={handleSubmit}>Submit</button>
+          <button className="wax" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
+      </div>
     </div>
-            </div>
   );
 }
 
