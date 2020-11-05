@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./SignUp.css";
-import { Redirect } from "react-router-dom";
-import { createUser } from "../../services/accounts";
+// import { Redirect } from "react-router-dom";
+// import { createUser } from "../../services/accounts";
 import Layout from "../../components/shared/Layout/Layout";
 
 function AddUser(props) {

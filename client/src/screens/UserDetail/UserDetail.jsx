@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./UserDetail.css";
-import { Redirect } from "react-router-dom";
-import { createUser } from "../../services/accounts";
+// import { Redirect } from "react-router-dom";
+// import { createUser } from "../../services/accounts";
 import Layout from "../../components/shared/Layout/Layout";
 import Logo from "../../assets/Logo-Full.png"
 
@@ -36,7 +36,7 @@ function AddUserDetail(props) {
     <div>
       <Layout />
       <div className="mimi">
-      <img src ={Logo} className="title" />
+      <img src ={Logo} className="title" alt="logo"/>
         <form className="pepperoni">
         <input
             className="first"

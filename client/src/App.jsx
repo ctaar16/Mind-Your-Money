@@ -31,9 +31,9 @@ const App = () => {
         <Route path="/checkings" exact component={Checkings} />
         <Route path="/savings" exact component={Savings} />
         <Route path="/creditcard" exact component={CreditCard} />
-        <Route exact path="/Login" exact component = {Login} />
-        <Route exact path="/AddUser" exact component = {AddUser} />
-        <Route exact path="/UserDetail" exact component = {UserDetail} />
+        <Route exact path="/Login" component = {Login} />
+        <Route exact path="/AddUser" component = {AddUser} />
+        <Route exact path="/UserDetail" component = {UserDetail} />
       </Switch>
     </div>
   );
