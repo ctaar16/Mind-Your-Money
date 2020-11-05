@@ -9,6 +9,7 @@ import { NavLink } from "react-router-dom";
 import { getAccounts } from "../../services/accounts";
 import AddIcon from "../../assets/Add-Icon.png";
 
+
 const MyAccount = () => {
   const [getChecking, setChecking] = useState([]);
   const [getSavings, setSavings] = useState([]);

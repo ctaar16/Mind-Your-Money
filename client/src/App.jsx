@@ -6,6 +6,9 @@ import EditSavings from "./screens/EditAccount/EditSavings";
 import EditCreditCards from "./screens/EditAccount/EditCreditCards";
 import AddAccount from "./screens/AddAccount/AddAccount";
 import MyAccount from "./screens/MyAccount/MyAccount";
+import AddUser from "./screens/SignUp/SignUp"
+import UserDetail from "./screens/UserDetail/UserDetail"
+import Login from "./screens/Login/Login";
 import { Route, Switch } from "react-router-dom";
 import Checkings from "../../client/src/components/DropDown/checkings";
 import Savings from "../../client/src/components/DropDown/savings";
@@ -28,6 +31,9 @@ const App = () => {
         <Route path="/checkings" exact component={Checkings} />
         <Route path="/savings" exact component={Savings} />
         <Route path="/creditcard" exact component={CreditCard} />
+        <Route exact path="/Login" exact component = {Login} />
+        <Route exact path="/AddUser" exact component = {AddUser} />
+        <Route exact path="/UserDetail" exact component = {UserDetail} />
       </Switch>
     </div>
   );

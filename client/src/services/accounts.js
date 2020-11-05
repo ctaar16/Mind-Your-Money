@@ -44,3 +44,12 @@ export const deleteAccount = async (id) => {
     throw error;
   }
 };
+
+// export const createUser = async (account) => {
+//   try {
+//     const response = await api.post("/user", user);
+//     return response.data;
+//   } catch (error) {
+//     throw error;
+//   }
+// };

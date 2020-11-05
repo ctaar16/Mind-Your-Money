@@ -1,0 +1,38 @@
+.account-layout {
+    background-color: #30445c;
+    height: 100vh;
+    padding-top: 150px;
+  }
+  
+  .account-title {
+    color: white;
+  }
+  
+  .add-account-button {
+    display: flex;
+    flex-direction: column;
+    background-color: #d0b68f;
+    width: 150px;
+    padding: 8px;
+    border-radius: 2px;
+    border: none;
+    margin: 20px auto;
+    font-size: 15px;
+    text-align: center;
+  }
+  .add-account-link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .add-account-text {
+    display: flex;
+    padding-left: 10px;
+  }
+  
+  .button-add-icon {
+    margin: 0 auto;
+    margin-left: 8px;
+    width: 20px;
+  }
+  
