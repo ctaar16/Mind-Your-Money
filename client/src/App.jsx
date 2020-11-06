@@ -13,6 +13,11 @@ import { Route, Switch } from "react-router-dom";
 import Checkings from "../../client/src/components/DropDown/checkings";
 import Savings from "../../client/src/components/DropDown/savings";
 import CreditCard from "../../client/src/components/DropDown/creditcard";
+import Goals from "./screens/Goals/Goals"
+import Vision from "./screens/Vision/Vision"
+import Calendar from "./screens/Calendar/Calendar"
+import Organize from "./screens/Organize/Organize"
+import Explore from "./screens/Explore/Explore"
 
 const App = () => {
   return (
@@ -34,6 +39,11 @@ const App = () => {
         <Route exact path="/Login" component = {Login} />
         <Route exact path="/AddUser" component = {AddUser} />
         <Route exact path="/UserDetail" component = {UserDetail} />
+        <Route exact path="/Goals" component={Goals} />
+        <Route exact path="/Vision" component = {Vision} />
+        <Route exact path="/Calendar" component = {Calendar} />
+        <Route exact path="/Organize" component = {Organize} />
+        <Route exact path="/Explore" component = {Explore} />
       </Switch>
     </div>
   );

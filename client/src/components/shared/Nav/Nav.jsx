@@ -11,31 +11,31 @@ const Nav = () => {
   return (
     <div className="nav-container">
       <div className="nav-icons">
-        <Link to="/">
+        <Link to="/Goals">
           <img src={Goals} alt="Goals" />
         </Link>
         <p>Goals</p>
       </div>
       <div className="nav-icons">
-        <Link to="/">
+        <Link to="/Organize">
           <img src={Organize} alt="Organize" />
         </Link>
         <p>Organize</p>
       </div>
       <div className="nav-icons">
-        <Link to="/">
+        <Link to="/Calendar">
           <img src={Calendar} alt="Calendar" />
         </Link>
         <p>Calendar</p>
       </div>
       <div className="nav-icons">
-        <Link to="/">
+        <Link to="/Vision">
           <img src={Vision} alt="Vision" />
         </Link>
         <p>Vision</p>
       </div>
       <div className="nav-icons">
-        <Link to="/">
+        <Link to="/Explore">
           <img src={Explore} alt="Explore" />
         </Link>
         <p>Explore</p>
