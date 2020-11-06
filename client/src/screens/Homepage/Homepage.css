@@ -31,6 +31,11 @@
   margin: 20px auto;
 }
 
+.calendar-container {
+  margin: 0px auto;
+  padding-top: 0px;
+}
+
 .calendar {
   border: 3px solid #30445c;
   border-radius: 2.5%;
