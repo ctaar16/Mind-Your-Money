@@ -8,8 +8,8 @@ import Calendar from "../../assets/Big-Calendar.png";
 
 const Homepage = () => {
   return (
-    <div>
-      <Layout />
+    <div className ="homepage-layout">
+    <Layout />
       <div className="homepage-container">
         <div className="progress-bar">
           <img className="progress-img" src={FullBar} alt="Progress" />

@@ -24,3 +24,23 @@ p {
   top: 85px;
   color: white;
 }
+
+@media only screen and (max-width: 500px) {
+  .nav-container {
+    width: 100vw;
+    background-image: linear-gradient(#30445c, #98acbb);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+  }
+  
+  .nav-icons {
+  min-width: 75px;
+  min-height: 50px;
+  max-height: 50px;
+  max-width: 75px;
+  }
+
+}
