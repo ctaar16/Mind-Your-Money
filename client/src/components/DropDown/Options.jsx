@@ -34,14 +34,15 @@ function Options() {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <Link
-              to="/services"
+            {/* <Link
+              to="/AddAccount"
               className="nav-links"
               onClick={closeMobileMenu}
             >
               Options <i className="fas fa-caret-down" />
-            </Link>
-            {dropdown && <Dropdown />}
+            </Link> */}
+            {/* {dropdown && <Dropdown />} */}
+            <Dropdown />
           </li>
         </ul>
       </nav>
