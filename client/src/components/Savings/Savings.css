@@ -17,10 +17,11 @@
 .savings-title {
   color: white;
   font-size: 20px;
+  padding-left: 7px;
 }
 
 .savings-list {
-  width: 80vw;
+  width: 78vw;
   text-align: left;
   background-color: #f0eeee;
   padding: 5px;

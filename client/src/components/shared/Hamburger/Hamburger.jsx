@@ -49,7 +49,7 @@ export default class Hamburger extends React.Component {
       >
         <main id="page-wrap">
           <NavLink className="link" to="/MyAccount">
-            Accounts
+            <div className="hamburger-text">Accounts</div>
           </NavLink>
 
           <a
@@ -57,14 +57,14 @@ export default class Hamburger extends React.Component {
             className="menu-item"
             href="#about"
           >
-            About
+            <div className="hamburger-text">About</div>
           </a>
           <a
             onClick={() => this.closeMenu()}
             className="menu-item"
             href="#projects"
           >
-            Projects
+            <div className="hamburger-text">Projects</div>
           </a>
 
           <a
@@ -72,7 +72,7 @@ export default class Hamburger extends React.Component {
             className="menu-item"
             href="#contact"
           >
-            Contact
+            <div className="hamburger-text">Contact</div>
           </a>
         </main>
       </Menu>

@@ -25,13 +25,13 @@
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 25px;
+  width: 25px;
 }
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: #373a47;
 }
 
 /* Sidebar wrapper styles
@@ -43,31 +43,32 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
-  padding: 2.5em 1.5em 0;
+  background: #d0b68f;
+  padding: 4em 1em 0;
   font-size: 1.15em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #373a47;
+  fill: #d0b68f;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
-  padding: 0.8em;
+  padding: 1em;
 }
 
 .bm-item-list a {
+  justify-content: center;
   text-decoration: none;
   color: white;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 /* Individual item */
 .bm-item {
   display: grid !important;
-  grid-template-rows: 125px 125px 125px 125px;
+  grid-template-rows: 100px 100px 100px 100px;
 }
 
 /* Styling of overlay */
@@ -75,3 +76,14 @@
   background: rgba(0, 0, 0, 0.3);
 }
 /* } */
+.hamburger-text {
+  background-color: #30445c;
+  border: 3px solid #30445c;
+  border-radius: 2.5%;
+  width: 230px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
