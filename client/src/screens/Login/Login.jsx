@@ -1,36 +1,57 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Login.css";
-// import { Redirect } from "react-router-dom";
-// import { createUser } from "../../services/accounts";
+import { Redirect, NavLink } from "react-router-dom";
+import { getUsers } from "../../services/users";
 import Layout from "../../components/shared/Layout/Layout";
 import Logo from "../../assets/Logo-Full.png"
 
-function AddUser(props) {
-//   const [User, setUser] = useState({
-//     email: "email",
-//     password: "",
-//   });
+function Login(props) {
+  const [ allUsers, setAllUsers] = useState()
+  const [ user, setUser] = useState({})
+  const [ userInput, setUserInput] = useState({
+    username: "",
+    password: "",
+  });
 
-//   const [isUpdated, setUpdated] = useState(false);
+  const [isUpdated, setUpdated] = useState(false);
 
-//   const handleChange = (event) => {
-//     const { name, value } = event.target;
-//     setUser({
-//       ...user,
-//       [name]: value,
-//     });
-//   };
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const users = await getUsers();
+      setAllUsers(users)
+    };
+    
+    fetchUsers();
+  }, []);
 
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-//     await createUser(user);
+  useEffect(() => {
+    passwordCheck()
+  },[allUsers, user, userInput])
 
-//     setUpdated(true);
-//   };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUserInput({
+      ...userInput,
+      [name]: value,
+    });
+  };
 
-//   if (isUpdated) {
-//     return <Redirect to="/Login" />;
-//   }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if(userInput.username != ""){
+      setUser(allUsers.filter((user) => `${user.username}` === userInput.username)[0])
+    }
+  };
+
+  const passwordCheck = () => {
+    if(user.password === userInput.password){
+      setUpdated(true);
+    }
+  }
+
+  if (isUpdated) {
+    return <Redirect to={`/User/${user._id}/MyAccount`} />;
+  }
 
   return (
     <div>
@@ -38,31 +59,37 @@ function AddUser(props) {
       <div className="mimi">
         <img src ={Logo} className="title" alt="logo" />
         <form className="pepperoni">
-          <input
+        <input
             className="first"
             type="text"
-            name="email"
-            placeholder="Email"
+            name="username"
+            value={userInput.username}
+            onChange={handleChange}
+            placeholder="Username"
           />
 
           <input
             className="first"
             type="text"
             name="password"
+            value={userInput.password}
+            onChange={handleChange}
             placeholder="Password"
           />
         </form>
         <div>
-          <button className="save" >
+          <button className="save" onClick={handleSubmit}>
             Login
           </button>
-          <button className="save" >
-            Sign Up
-          </button>
+          <NavLink to="/SignUp">
+            <button className="save" >
+              Sign Up
+            </button>
+          </NavLink>
         </div>
       </div>
     </div>
   );
 }
 
-export default AddUser;
+export default Login;

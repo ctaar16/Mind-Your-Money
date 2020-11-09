@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 const Account = new Schema(
   {
     accountType: { type: String, required: false },
+    userId: { type: Schema.Types.ObjectId, ref: 'users' },
     accountNumber: { type: String, required: true },
     routingNumber: { type: String, required: false },
     creditCardExp: { type: String, required: false },
