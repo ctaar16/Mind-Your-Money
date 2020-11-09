@@ -33,13 +33,15 @@ function AddUser(props) {
   }
 
   return (
-    <div>
+    <div className="sixpack">
       {/* <Layout /> */}
-      <div className="mimi">
+      <div className="dragon">
+        <div className="dummy">
         <h1 className="title">Sign Up with Mind Your Money</h1>
+        </div>
         <form className="pepperoni">
           <input
-            className="first"
+            className="third"
             type="text"
             name="username"
             value={user.username}
@@ -48,7 +50,7 @@ function AddUser(props) {
           />
 
           <input
-            className="first"
+            className="third"
             type="text"
             name="password"
             value={user.password}
@@ -57,7 +59,7 @@ function AddUser(props) {
           />
 
           <input
-            className="first"
+            className="third"
             type="text"
             name="email"
             value={user.email}
@@ -66,7 +68,7 @@ function AddUser(props) {
           />
 
           <input
-            className="first"
+            className="third"
             type="text"
             name="imgURL"
             value={user.imgURL}
@@ -75,7 +77,7 @@ function AddUser(props) {
           />
         </form>
         <div>
-          <button className="save" onClick={handleSubmit}>
+          <button className="herb" onClick={handleSubmit}>
             Sign Up
           </button>
         </div>
