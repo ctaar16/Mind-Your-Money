@@ -34,7 +34,7 @@ function AddUser(props) {
 
   return (
     <div>
-      <Layout />
+      {/* <Layout /> */}
       <div className="mimi">
         <h1 className="title">Sign Up with Mind Your Money</h1>
         <form className="pepperoni">
