@@ -14,7 +14,7 @@ function AddUserDetail(props) {
     username: "",
     password: "",
     email: "",
-    imgURL: "https://www.unsplash.com/92hd.png",
+    imgURL: "https://images.unsplash.com/photo-1570887401702-4bf2cd6f05bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
   });
 
   let params = useParams();
@@ -64,7 +64,7 @@ function AddUserDetail(props) {
     <div>
       <Layout />
       <div className="mimi">
-      <img src ={Logo} className="title" alt="logo"/>
+      <img src ={`${user.imgURL}`} className="user-image" alt={`${user.imgURL}`}/>
         <form className="pepperoni">
         <input
             className="first"
