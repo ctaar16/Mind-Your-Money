@@ -54,13 +54,15 @@ function Login(props) {
   }
 
   return (
-    <div>
-      <Layout />
-      <div className="mimi">
-        <img src ={Logo} className="title" alt="logo" />
+    <div className="sixpack">
+      {/* <Layout /> */}
+      <div className="dragon">
+        <div className="dummy">
+        <img src ={Logo} className="title-img" alt="logo" />
+        </div>
         <form className="pepperoni">
         <input
-            className="first"
+            className="third"
             type="text"
             name="username"
             value={userInput.username}
@@ -69,7 +71,7 @@ function Login(props) {
           />
 
           <input
-            className="first"
+            className="third"
             type="text"
             name="password"
             value={userInput.password}
@@ -78,11 +80,11 @@ function Login(props) {
           />
         </form>
         <div>
-          <button className="save" onClick={handleSubmit}>
-            Login
+          <button className="herb" onClick={handleSubmit}>
+            Login |
           </button>
           <NavLink to="/SignUp">
-            <button className="save" >
+            <button className="herb2" >
               Sign Up
             </button>
           </NavLink>
