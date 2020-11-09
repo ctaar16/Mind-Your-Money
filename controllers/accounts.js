@@ -5,8 +5,10 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const getAccounts = async (req, res) => {
     try {
+        const { userID } = req.params
         const accounts = await Account.find()
-        res.json(accounts)
+        const userAccounts = accounts.filter((account) => account.userId == `${userID}`)
+        res.json(userAccounts)
     } catch (error) {
         res.status(500).json({ error: error.message })
     }

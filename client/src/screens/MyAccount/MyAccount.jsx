@@ -5,7 +5,7 @@ import Checking from "../../components/Checking/Checking";
 import Savings from "../../components/Savings/Savings";
 import CreditCards from "../../components/CreditCards/CreditCards";
 import Rewards from "../../components/Rewards/Rewards";
-import { NavLink } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { getAccounts } from "../../services/accounts";
 import AddIcon from "../../assets/Add-Icon.png";
 
@@ -14,10 +14,12 @@ const MyAccount = () => {
   const [getChecking, setChecking] = useState([]);
   const [getSavings, setSavings] = useState([]);
   const [getCreditCards, setCreditCards] = useState([]);
-
+  let params = useParams();
+  
   useEffect(() => {
     const fetchAccounts = async () => {
-      const accounts = await getAccounts();
+      
+      const accounts = await getAccounts(params.userId);
       setChecking(
         accounts.filter((account) => account.accountType === "Checking")
       );
@@ -43,7 +45,7 @@ const MyAccount = () => {
           <Rewards />
         </div>
         <button className="add-account-button">
-          <NavLink className="add-account-link" to="/AddAccount">
+          <NavLink className="add-account-link" to={`/User/${params.userId}/AddAccount`}>
             <strong className="add-account-text">
               Add Account
               <img className="button-add-icon" src={AddIcon} alt="Add" />

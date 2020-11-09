@@ -1,17 +1,17 @@
 import api from "./apiConfig";
 
-export const getAccounts = async () => {
+export const getAccounts = async (userId) => {
   try {
-    const response = await api.get("/accounts");
+    const response = await api.get(`/users/${userId}/accounts`);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const getAccount = async (id) => {
+export const getAccount = async (userId, id) => {
   try {
-    const response = await api.get(`/accounts/${id}`);
+    const response = await api.get(`/users/${userId}/accounts/${id}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -44,12 +44,3 @@ export const deleteAccount = async (id) => {
     throw error;
   }
 };
-
-// export const createUser = async (account) => {
-//   try {
-//     const response = await api.post("/user", user);
-//     return response.data;
-//   } catch (error) {
-//     throw error;
-//   }
-// };

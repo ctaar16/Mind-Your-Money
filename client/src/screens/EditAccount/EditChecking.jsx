@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./EditAccount.css";
 import { useParams, Redirect } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
-import {
-  getAccount,
-  updateAccount,
-  deleteAccount,
-} from "../../services/accounts";
+import { getAccount, updateAccount, deleteAccount } from "../../services/accounts";
 
 const EditChecking = (props) => {
+  let params = useParams();
   const [account, setAccount] = useState({
     accountType: "Checking",
+    userId: `${params.userId}`,
     accountNumber: "",
     routingNumber: "",
     creditCardExp: "N/A",
@@ -25,10 +23,9 @@ const EditChecking = (props) => {
   });
 
   const [isUpdated, setUpdated] = useState(false);
-  let params = useParams();
   useEffect(() => {
     const fetchAccout = async () => {
-      const account = await getAccount(params.id);
+      const account = await getAccount(params.userId, params.id);
       setAccount(account);
     };
     fetchAccout();
@@ -55,7 +52,7 @@ const EditChecking = (props) => {
   };
 
   if (isUpdated) {
-    return <Redirect to="/MyAccount" />;
+    return <Redirect to={`/User/${params.userId}/MyAccount`} />;
   }
 
   return (

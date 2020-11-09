@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import "./Checking.css";
-import { NavLink, Route } from "react-router-dom";
+import { useParams, NavLink, Route } from "react-router-dom";
 import EditChecking from "../../screens/EditAccount/EditChecking";
 import EditIcon from "../../assets/Edit-Icon.png";
 
 function Checking(props) {
-  const [getID, setID] = useState("");
+  const [getID, setID] = useState("default");
+  let params = useParams();
   return (
     <div className="checking-layout">
       <div className="checking-title-bar">
         <div className="checking-title">My Checking</div>
-        <NavLink className="link" to={`/EditChecking/${getID}/edit`}>
+        <NavLink className="link" to={getID === "default" ? `/User/${params.userId}/MyAccount` : `/User/${params.userId}/EditChecking/${getID}/edit`}>
           <img className="checking-button" src={EditIcon} alt="Edit" />
         </NavLink>
         <Route
-          path={`/EditChecking/${getID}/edit`}
+          path={`/User/${params.userId}/EditChecking/${getID}/edit`}
           exact
           component={EditChecking}
         />

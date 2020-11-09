@@ -1,36 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./UserDetail.css";
-// import { Redirect } from "react-router-dom";
-// import { createUser } from "../../services/accounts";
+import { useParams, Redirect } from "react-router-dom";
+import { getUser, updateUser, deleteUser } from "../../services/users";
+import { getAccounts, deleteAccount } from "../../services/accounts";
 import Layout from "../../components/shared/Layout/Layout";
 import Logo from "../../assets/Logo-Full.png"
 
 function AddUserDetail(props) {
-//   const [User, setUser] = useState({
-//     email: "email",
-//     password: "",
-//   });
+  const [userAccounts, setUserAccounts] = useState();
+  const [isUpdated, setUpdated] = useState(false);
+  const [isDeleted, setDeleted] = useState(false);
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+    email: "",
+    imgURL: "https://www.unsplash.com/92hd.png",
+  });
 
-//   const [isUpdated, setUpdated] = useState(false);
+  let params = useParams();
 
-//   const handleChange = (event) => {
-//     const { name, value } = event.target;
-//     setUser({
-//       ...user,
-//       [name]: value,
-//     });
-//   };
+  useEffect(() => {
+    const fetchUser = async () => {
+      const grabUser = await getUser(params.userId);
+      const accounts = await getAccounts(params.userId);
+      setUser(grabUser)
+      setUserAccounts(accounts)
+    };
+    fetchUser();
+  }, []);
 
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-//     await createUser(user);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
 
-//     setUpdated(true);
-//   };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await updateUser(params.userId, user);
+    setUpdated(true);
+  };
 
-//   if (isUpdated) {
-//     return <Redirect to="/UserDetail" />;
-//   }
+  const handleDelete = async (event) => {
+    event.preventDefault();
+    await deleteUser(params.userId);
+    userAccounts.map(async (account) => {
+      await deleteAccount(account._id);
+    })
+    setDeleted(true);
+  };
+
+  if (isUpdated) {
+    return <Redirect to={`/User/${params.userId}/Homepage`} />;
+  }
+
+  if (isDeleted) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div>
@@ -41,36 +69,45 @@ function AddUserDetail(props) {
         <input
             className="first"
             type="text"
-            name="email"
+            name="username"
+            value={user.username}
+            onChange={handleChange}
             placeholder="Username"
           />
           
           <input
             className="first"
             type="text"
+            name="password"
+            value={user.password}
+            onChange={handleChange}
+            placeholder="Password"
+          />
+
+          <input
+            className="first"
+            type="text"
             name="email"
+            value={user.email}
+            onChange={handleChange}
             placeholder="Email"
           />
 
           <input
             className="first"
             type="text"
-            name="password"
-            placeholder="Password"
-          />
-          <input
-            className="first"
-            type="text"
-            name="email"
+            name="imgURL"
+            value={user.imgURL}
+            onChange={handleChange}
             placeholder="Image Link"
           />
 
         </form>
         <div>
-          <button className="save" >
+          <button className="save" onClick={handleSubmit}>
             Update Changes
           </button>
-          <button className="delete" >
+          <button className="delete" onClick={handleDelete}>
             Delete Account
           </button>
         </div>
