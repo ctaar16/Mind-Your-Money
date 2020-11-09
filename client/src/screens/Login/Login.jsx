@@ -50,7 +50,7 @@ function Login(props) {
   }
 
   if (isUpdated) {
-    return <Redirect to={`/User/${user._id}/MyAccount`} />;
+    return <Redirect to={`/User/${user._id}/Homepage`} />;
   }
 
   return (
