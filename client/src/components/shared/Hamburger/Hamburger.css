@@ -24,8 +24,8 @@
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  right: -69px !important;
-  top: 10px !important;
+  right: 30px !important;
+  top: 2px !important;
   height: 30px !important;
   width: 30px !important;
 }
