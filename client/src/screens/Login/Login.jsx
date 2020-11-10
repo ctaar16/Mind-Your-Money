@@ -55,7 +55,6 @@ function Login(props) {
 
   return (
     <div className="sixpack">
-      {/* <Layout /> */}
       <div className="dragon">
         <div className="dummy">
           <img src={Logo} className="title-img" alt="logo" />
