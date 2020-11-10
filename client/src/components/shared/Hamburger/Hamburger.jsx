@@ -10,7 +10,7 @@ export default class Hamburger extends React.Component {
       menuOpen: false,
     };
   }
-
+  
   // This keeps your state in sync with the opening/closing of the menu
   // via the default means, e.g. clicking the X, pressing the ESC key etc.
   handleStateChange(state) {
@@ -36,8 +36,9 @@ export default class Hamburger extends React.Component {
     }
     this.closeMenu();
   };
-
+  
   render() {
+    
     return (
       // Pass on our props
       <Menu
@@ -48,8 +49,12 @@ export default class Hamburger extends React.Component {
         customOnKeyDown={this.closeAllMenusOnEsc}
       >
         <main id="page-wrap">
-          <NavLink className="link" to="/MyAccount">
-            Accounts
+          <NavLink className="link" to={`/User/${this.props.userId}/MyAccount`}>
+            <div className="hamburger-text">Accounts</div>
+          </NavLink>
+
+          <NavLink className="link" to={`/User/${this.props.userId}/UserDetail`}>
+            <div className="hamburger-text">User Details</div>
           </NavLink>
 
           <a
@@ -57,14 +62,14 @@ export default class Hamburger extends React.Component {
             className="menu-item"
             href="#about"
           >
-            About
+            <div className="hamburger-text">About</div>
           </a>
           <a
             onClick={() => this.closeMenu()}
             className="menu-item"
             href="#projects"
           >
-            Projects
+            <div className="hamburger-text">Projects</div>
           </a>
 
           <a
@@ -72,8 +77,12 @@ export default class Hamburger extends React.Component {
             className="menu-item"
             href="#contact"
           >
-            Contact
+            <div className="hamburger-text">Contact</div>
           </a>
+
+          <NavLink className="link" to="/">
+            <div className="hamburger-text">Log Out</div>
+          </NavLink>
         </main>
       </Menu>
     );

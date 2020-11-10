@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { MenuItems } from "./menuitems";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./drop.css";
 
 function Dropdown() {
   const [click, setClick] = useState(false);
-
   const handleClick = () => setClick(!click);
+  let params = useParams();
 
   return (
     <>
@@ -19,7 +19,7 @@ function Dropdown() {
             <li key={index}>
               <Link
                 className={item.cName}
-                to={item.path}
+                to={`/User/${params.userId}${item.path}`}
                 onClick={() => setClick(false)}
               >
                 {item.title}

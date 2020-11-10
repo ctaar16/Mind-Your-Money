@@ -9,8 +9,10 @@ import {
 } from "../../services/accounts";
 
 const EditCreditCard = (props) => {
+  let params = useParams();
   const [account, setAccount] = useState({
     accountType: "CreditCard",
+    userId: `${params.userId}`,
     accountNumber: "",
     routingNumber: "N/A",
     creditCardExp: "",
@@ -25,11 +27,9 @@ const EditCreditCard = (props) => {
   });
 
   const [isUpdated, setUpdated] = useState(false);
-
-  let params = useParams();
   useEffect(() => {
     const fetchAccout = async () => {
-      const account = await getAccount(params.id);
+      const account = await getAccount(params.userId, params.id);
       setAccount(account);
     };
     fetchAccout();
@@ -45,20 +45,18 @@ const EditCreditCard = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     await updateAccount(params.id, account);
     setUpdated(true);
   };
 
   const handleDelete = async (event) => {
     event.preventDefault();
-
     await deleteAccount(params.id);
     setUpdated(true);
   };
 
   if (isUpdated) {
-    return <Redirect to="/MyAccount" />;
+    return <Redirect to={`/User/${params.userId}/MyAccount`} />;
   }
 
   return (

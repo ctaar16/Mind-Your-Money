@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./creditcard.css";
-import { Redirect } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { createAccount } from "../../services/accounts";
 import Layout from "../shared/Layout/Layout";
 
 function AddAccount(props) {
+  let params = useParams();
   const [account, setAccount] = useState({
     accountType: "CreditCard",
+    userId: `${params.userId}`,
     accountNumber: "",
     routingNumber: "N/A",
     creditCardExp: "",
@@ -38,7 +40,7 @@ function AddAccount(props) {
   };
 
   if (isUpdated) {
-    return <Redirect to="/MyAccount" />;
+    return <Redirect to={`/User/${params.userId}/MyAccount`} />;
   }
 
   return (

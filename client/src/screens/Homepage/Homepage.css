@@ -21,6 +21,7 @@
 }
 
 .boards-container {
+  padding-top: 5px;
   display: grid;
   height: 30vh;
 }
@@ -28,13 +29,17 @@
 .board {
   border: 3px solid #30445c;
   border-radius: 2.5%;
-  margin: 20px auto;
+  margin: 17px auto;
+}
+
+.calendar-container {
+  margin: 0px auto;
+  margin-bottom: 10px;
 }
 
 .calendar {
   border: 3px solid #30445c;
   border-radius: 2.5%;
-  margin: 5px auto;
 }
 
 @media only screen and (max-width: 500px) {
