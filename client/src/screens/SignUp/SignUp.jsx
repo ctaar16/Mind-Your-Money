@@ -34,7 +34,6 @@ function AddUser(props) {
 
   return (
     <div className="sixpack">
-      {/* <Layout /> */}
       <div className="dragon">
         <div className="dummy">
         <h1 className="title">Sign Up with Mind Your Money</h1>
