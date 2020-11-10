@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./Login.css";
 import { Redirect, NavLink } from "react-router-dom";
 import { getUsers } from "../../services/users";
-import Layout from "../../components/shared/Layout/Layout";
-import Logo from "../../assets/Logo-Full.png"
+import Logo from "../../assets/Logo-Full.png";
 
 function Login(props) {
-  const [ allUsers, setAllUsers] = useState()
-  const [ user, setUser] = useState({})
-  const [ userInput, setUserInput] = useState({
+  const [allUsers, setAllUsers] = useState();
+  const [user, setUser] = useState({});
+  const [userInput, setUserInput] = useState({
     username: "",
     password: "",
   });
@@ -18,15 +17,20 @@ function Login(props) {
   useEffect(() => {
     const fetchUsers = async () => {
       const users = await getUsers();
-      setAllUsers(users)
+      setAllUsers(users);
     };
-    
+
     fetchUsers();
   }, []);
 
   useEffect(() => {
-    passwordCheck()
-  },[allUsers, user, userInput])
+    const passwordCheck = () => {
+      if (user.password === userInput.password) {
+        setUpdated(true);
+      }
+    };
+    passwordCheck();
+  }, [allUsers, user, userInput]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -38,16 +42,12 @@ function Login(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(userInput.username != ""){
-      setUser(allUsers.filter((user) => `${user.username}` === userInput.username)[0])
+    if (userInput.username != "") {
+      setUser(
+        allUsers.filter((user) => `${user.username}` === userInput.username)[0]
+      );
     }
   };
-
-  const passwordCheck = () => {
-    if(user.password === userInput.password){
-      setUpdated(true);
-    }
-  }
 
   if (isUpdated) {
     return <Redirect to={`/User/${user._id}/Homepage`} />;
@@ -58,10 +58,10 @@ function Login(props) {
       {/* <Layout /> */}
       <div className="dragon">
         <div className="dummy">
-        <img src ={Logo} className="title-img" alt="logo" />
+          <img src={Logo} className="title-img" alt="logo" />
         </div>
         <form className="pepperoni">
-        <input
+          <input
             className="third"
             type="text"
             name="username"
@@ -84,9 +84,7 @@ function Login(props) {
             Login |
           </button>
           <NavLink to="/SignUp">
-            <button className="herb2" >
-              Sign Up
-            </button>
+            <button className="herb2">Sign Up</button>
           </NavLink>
         </div>
       </div>
